@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="fi-FI"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Diary</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <script
+  src="https://code.jquery.com/jquery-1.12.4.js"
+  integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+  crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <h1>Learning Diary!</h1>
+        <main>
+            <div id="lomake">
+                <form id="subbari" action="">
+                    <!--<span>text</span><input type="text" name="UUID" id="topicId" />-->
+                    <span></span><input type="text" name="Title" id="title" />
+                <br />
+                <span></span> <input type="text" name="Description" id="desc" />
+                <br />
+                <span></span><label for="timeM">Time to Master</label> <input type="number" name="TimeToMaster" id="timeM" />
+                
+                <span></span><label for="timeS"> Time spent</label> <input type="number" name="TimeSpent" id="timeS" />
+                <br />
+                <span></span> <input type="url" name="source" id="srcUrl" />
+                <br />
+                <span></span>  <input type="date" name="StartLearn" id="startL" />
+                <span></span>  <input type="date" name="EndLearn" id="endL" />
+                <br />
+                <span id="progS">In progress?</span> <input type="checkbox" name="inProgress" id="prog" />
+                <br /><button id="nappi" type="button">Submit</button>
+                </form>
+            </div>
+            <div>
+                <ol id="#blogit">
+
+                </ol>
+            </div>
+        </main>
+        <script src="oma.js" async defer></script>
+    </body>
+</html>

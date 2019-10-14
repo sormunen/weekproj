@@ -1,0 +1,51 @@
+h1 {
+    text-align: center;
+}
+
+div {
+    padding: 10px;
+    text-align: center;
+    background-color: #999999;
+}
+input {
+    padding: 5px;
+    margin-top: 5px;
+    
+}
+#progS {
+    
+    padding: 5px;
+    margin: 3px;
+}
+#nappi {
+    padding: 10px 15px;
+    margin: 15px;
+}
+.artikkeli{
+    background-color: lightblue;
+    padding: 10px 5px;
+    margin-top: 20px;
+}
+.time {
+    text-align: left;
+    font-size: 10px;
+}
+.desci {
+    text-align: left;
+}
+/*#timer {
+    text-align: right;
+    background-color: #fff;
+}*/
+.title{
+    font-size: 2em;
+}
+.desci {
+    font-size: 1.3em;
+    overflow:break-word;
+}
+#timeM, #timeS{
+    padding: 2px;
+    margin: 1px;
+    width: 50px;
+}
