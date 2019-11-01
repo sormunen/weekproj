@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var path = require('path');
 bodyParser = require('body-parser');
 var parser = bodyParser.urlencoded({extended: true});
 var router = express.Router();
@@ -7,11 +8,14 @@ var fs = require('fs');
 var cors = require('cors');
 app.use(cors());
 app.use(bodyParser.json());
-var counter = 0;
+var counter = 0; 
+app.use(express.static(path.join(__dirname, 'public')));
 router.route('/blogs').get(function(req, res)
 {
+    readBlog();
     res.json(topics);
-})
+
+}) 
 
 router.route('/blogs/:id')
                 .get(function(req, res)
@@ -19,6 +23,7 @@ router.route('/blogs/:id')
                     for (article of topics){
                         if(article.id == req.params.id){
                             res.json(article);
+                            readBlog();
                             return;
                         }
                     }
@@ -49,7 +54,7 @@ router.route('/blogs/:id')
                 })
 
 //fswriteFile("cars.json", JSON.stringify(cars), ()=>{console.log("Autot tallennettu")})
-
+ 
 var topics = [];
 app.use('/api', router);
 function saveBlog(){
@@ -57,14 +62,13 @@ function saveBlog(){
         console.log("Blogit päivitetty!");
     })
 }
-
-var server = app.listen(port=3001, function(){
-    var host = server.address().address; var port = server.address().port;
+function readBlog(){
     fs.readFile("topics.json", function(err, data){
-        console.log("Blogit haettu");
+        console.log("Blogit luettu!");
         topics = JSON.parse(data);
         console.dir(topics);
-    })
-    console.log("Listening at http://%s%s", host, port);
+    } 
+    )}
 
-})
+
+module.exports = app; 
